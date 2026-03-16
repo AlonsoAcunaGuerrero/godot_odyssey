@@ -3,7 +3,7 @@
 /android/
 
 # Data
-addons/odyssey_plugin/data/items
+addons/odyssey_plugin/data/items/*
 
 # Types
-addons/odyssey_plugin/entities/inventory/item_types/
+addons/odyssey_plugin/entities/items/item_types/*
