@@ -1,0 +1,54 @@
+{
+	"types" : {
+		"key" : {},
+		"consumable" : {},
+		"quest" : {},
+		"weapon" : {
+			"attack" : {
+				"type" : "INT",
+				"min_value" : 0,
+				"max_value" : 999
+			}
+		},
+		"armor" : {
+			"sub_types" : [
+				"helmet",
+				"chestplate",
+				"boots",
+				"gloves"
+			],
+			"defense" : {
+				"type" : "INT",
+				"min_value" : 0,
+				"max_value" : 999
+			},
+			"speed" : {
+				"type" : "INT",
+				"min_value" : 0,
+				"max_value" : 999
+			}
+		}
+	},
+
+	"base_structure" : {
+		"id" : {
+			"type" : "STRING"
+		},
+		"icon" : {
+			"type" : "IMG"
+		},
+		"name" : {
+			"type" : "STRING",
+			"max_length" : 20
+		},
+		"description" : {
+			"type" : "STRING",
+			"max_length" : 400
+		},
+		"max_stack" : {
+			"type" : "INT",
+			"min_value" : 1,
+			"max_value" : 999
+		}
+	}
+}

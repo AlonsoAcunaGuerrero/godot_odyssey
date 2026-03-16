@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bh0fgdeni7od"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am00y"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 88.0
+content_margin_bottom = 12.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_right = 2500
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwgik"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_uwgik"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/styles/normal = SubResource("StyleBoxFlat_am00y")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_uwgik")
+
+[node name="TestDialogueBox" type="Control" unique_id=538695452]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uwgik")
+
+[node name="vbx" type="VBoxContainer" parent="." unique_id=1955028118]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="lblName" type="Label" parent="vbx" unique_id=929003495]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Character Name"
+
+[node name="txtDialogue" type="RichTextLabel" parent="vbx" unique_id=567990796]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 22

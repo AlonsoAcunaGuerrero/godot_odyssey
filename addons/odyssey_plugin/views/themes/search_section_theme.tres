@@ -1,0 +1,49 @@
+[gd_resource type="Theme" format=3 uid="uid://cqnueudex6i6e"]
+
+[ext_resource type="FontFile" uid="uid://gu80wxe1bugc" path="res://addons/odyssey_plugin/fonts/oswald/Oswald-VariableFont_wght.ttf" id="1_1bhhx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bhhx"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(0.2485658, 0.13537225, 0.34157172, 1)
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txue1"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(0.19215687, 0.101960786, 0.26666668, 1)
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar6cw"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(0.3150967, 0.1817871, 0.42968687, 1)
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijeit"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.41600728, 0.2501025, 0.5520355, 1)
+corner_radius_top_left = 12
+corner_radius_bottom_left = 12
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_1bhhx")
+Button/styles/hover = SubResource("StyleBoxFlat_1bhhx")
+Button/styles/normal = SubResource("StyleBoxFlat_txue1")
+Button/styles/pressed = SubResource("StyleBoxFlat_ar6cw")
+TextEdit/font_sizes/font_size = 20
+TextEdit/fonts/font = ExtResource("1_1bhhx")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_ijeit")

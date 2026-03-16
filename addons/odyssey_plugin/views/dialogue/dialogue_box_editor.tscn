@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://cbxbhdxwx37fx"]
+
+[ext_resource type="Theme" uid="uid://ckcygqxjnrjx5" path="res://addons/odyssey_plugin/views/themes/dialogue_editor_theme.tres" id="1_wgxtd"]
+[ext_resource type="Script" uid="uid://cb8hcvuigcjtn" path="res://addons/odyssey_plugin/controllers/dialogue/dialogue_box_editor.gd" id="2_0mp3u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hug4"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.101961, 0.215686, 0.301961, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.25098, 0.407843, 0.509804, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7v8g"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 16.0
+bg_color = Color(0.12715, 0.258177, 0.357654, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.315396, 0.494144, 0.610919, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uewds"]
+
+[node name="DialogueBoxEditor" type="PanelContainer" unique_id=857832469]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wgxtd")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4hug4")
+script = ExtResource("2_0mp3u")
+
+[node name="vbx" type="VBoxContainer" parent="." unique_id=1530164715]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="pnlName" type="PanelContainer" parent="vbx" unique_id=376574767]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c7v8g")
+
+[node name="vbx" type="VBoxContainer" parent="vbx/pnlName" unique_id=2029059750]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="hbxChooseName" type="HBoxContainer" parent="vbx/pnlName/vbx" unique_id=1151335695]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="chkWriteName" type="CheckButton" parent="vbx/pnlName/vbx/hbxChooseName" unique_id=855666206]
+layout_mode = 2
+text = "Write Name?"
+
+[node name="OptionButton" type="OptionButton" parent="vbx/pnlName/vbx/hbxChooseName" unique_id=848121491]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="hbxFinalName" type="HBoxContainer" parent="vbx/pnlName/vbx" unique_id=677072319]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="txtName" type="TextEdit" parent="vbx/pnlName/vbx/hbxFinalName" unique_id=453884236]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Write Character Name..."
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="lblFinalName" type="Label" parent="vbx/pnlName/vbx/hbxFinalName" unique_id=2134111043]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"NameFinal"
+theme_override_font_sizes/font_size = 20
+
+[node name="hbxDialogue" type="HBoxContainer" parent="vbx" unique_id=1177117623]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="vbxEdit" type="VBoxContainer" parent="vbx/hbxDialogue" unique_id=1858312606]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="lblHeader" type="Label" parent="vbx/hbxDialogue/vbxEdit" unique_id=1019488775]
+layout_mode = 2
+theme_type_variation = &"DialogueHeader"
+text = "Edit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pnlDialogueEdit" type="PanelContainer" parent="vbx/hbxDialogue/vbxEdit" unique_id=1009683043]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_uewds")
+
+[node name="txtDialogue" type="TextEdit" parent="vbx/hbxDialogue/vbxEdit/pnlDialogueEdit" unique_id=1436214689]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"DialogueBox"
+
+[node name="lblCharCounter" type="Label" parent="vbx/hbxDialogue/vbxEdit/pnlDialogueEdit" unique_id=1151541121]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "0/256"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="vbxResult" type="VBoxContainer" parent="vbx/hbxDialogue" unique_id=1913437254]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="lblHeader" type="Label" parent="vbx/hbxDialogue/vbxResult" unique_id=1292445061]
+layout_mode = 2
+theme = ExtResource("1_wgxtd")
+theme_type_variation = &"DialogueHeader"
+text = "Result"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblFinalDialogue" type="RichTextLabel" parent="vbx/hbxDialogue/vbxResult" unique_id=895573866]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+bbcode_enabled = true

@@ -1,0 +1,49 @@
+[gd_resource type="Theme" format=3 uid="uid://ead1u6ghs5pd"]
+
+[ext_resource type="FontFile" uid="uid://gu80wxe1bugc" path="res://addons/odyssey_plugin/fonts/oswald/Oswald-VariableFont_wght.ttf" id="1_hydkb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hydkb"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.3710061, 0.22095501, 0.4978705, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ay1a7"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.53469795, 0.34470838, 0.69668967, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nadh4"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.41568628, 0.2509804, 0.5529412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_hydkb")
+OptionButton/constants/arrow_margin = 16
+OptionButton/font_sizes/font_size = 20
+OptionButton/fonts/font = ExtResource("1_hydkb")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_hydkb")
+OptionButton/styles/hover_mirrored = SubResource("StyleBoxFlat_hydkb")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_hydkb")
+OptionButton/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ay1a7")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_nadh4")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_ay1a7")

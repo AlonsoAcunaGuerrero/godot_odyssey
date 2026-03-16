@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Data
+addons/odyssey_plugin/data/items
+
+# Types
+addons/odyssey_plugin/entities/inventory/item_types/

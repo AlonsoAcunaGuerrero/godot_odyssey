@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bwh4x20401gdb"]
+
+[ext_resource type="FontFile" uid="uid://don5kxjxqg5e6" path="res://addons/odyssey_plugin/fonts/oswald/static/Oswald-Medium.ttf" id="1_p3032"]
+[ext_resource type="PackedScene" uid="uid://c2dfr02bgdp77" path="res://addons/odyssey_plugin/views/tab_bar_controller.tscn" id="2_1bcr1"]
+[ext_resource type="PackedScene" uid="uid://cwqovr2egbukp" path="res://addons/odyssey_plugin/views/item/item_main_editor.tscn" id="3_o3mbq"]
+[ext_resource type="PackedScene" uid="uid://dt2745y6h5ck1" path="res://addons/odyssey_plugin/views/character/character_main_editor.tscn" id="4_ilny2"]
+[ext_resource type="PackedScene" uid="uid://sppf536c2vg2" path="res://addons/odyssey_plugin/views/dialogue/dialogue_main_editor.tscn" id="5_y42wj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66cf0"]
+bg_color = Color(0.068118714, 0.025472267, 0.10184387, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlcyl"]
+content_margin_top = 12.0
+bg_color = Color(0.411765, 0.513726, 0.752941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h785o"]
+content_margin_left = 24.0
+content_margin_top = 30.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0.509804, 0.607843, 0.823529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1jdi"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0.41024, 0.515808, 0.753402, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyfcb"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.412688, 0.515092, 0.753323, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xyfcb"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yjre4"]
+color = Color(0.29670402, 0.1671296, 0.39765096, 1)
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjre4"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="MainPanel" type="PanelContainer" unique_id=2077864612]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_66cf0")
+
+[node name="tbc" type="TabContainer" parent="." unique_id=1878614266]
+visible = false
+layout_mode = 2
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hovered_color = Color(1, 1, 1, 1)
+theme_override_colors/font_unselected_color = Color(1, 1, 1, 1)
+theme_override_constants/side_margin = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_p3032")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/panel = SubResource("StyleBoxFlat_xlcyl")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_h785o")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_a1jdi")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_xyfcb")
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_xyfcb")
+current_tab = 2
+
+[node name="Characters" type="TabBar" parent="tbc" unique_id=33675921]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Dialogues" type="TabBar" parent="tbc" unique_id=1733665877]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Items" type="TabBar" parent="tbc" unique_id=869512692]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="hbx" type="HBoxContainer" parent="." unique_id=2018195030]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TabBarController" parent="hbx" unique_id=2133605214 node_paths=PackedStringArray("items_panel", "characters_panel", "dialogues_panel") instance=ExtResource("2_1bcr1")]
+layout_mode = 2
+items_panel = NodePath("../pnl/ItemMainEditor")
+characters_panel = NodePath("../pnl/CharacterMainEditor")
+dialogues_panel = NodePath("../pnl/DialogueMainEditor")
+
+[node name="VSeparator" type="VSeparator" parent="hbx" unique_id=1438711504]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxLine_yjre4")
+
+[node name="pnl" type="PanelContainer" parent="hbx" unique_id=1649120355]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_yjre4")
+
+[node name="ItemMainEditor" parent="hbx/pnl" unique_id=821620337 instance=ExtResource("3_o3mbq")]
+layout_mode = 2
+
+[node name="CharacterMainEditor" parent="hbx/pnl" unique_id=894292981 instance=ExtResource("4_ilny2")]
+visible = false
+layout_mode = 2
+
+[node name="DialogueMainEditor" parent="hbx/pnl" unique_id=817763100 instance=ExtResource("5_y42wj")]
+visible = false
+layout_mode = 2

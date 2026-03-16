@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dvi53fsorsw2a"]
+
+[ext_resource type="Theme" uid="uid://c6w5plm1gihas" path="res://addons/odyssey_plugin/views/common/themes/fields_theme.tres" id="1_q0044"]
+[ext_resource type="Script" uid="uid://ohs6ne82jwv6" path="res://addons/odyssey_plugin/controllers/common/int_field.gd" id="2_p6jwv"]
+
+[node name="IntField" type="PanelContainer" unique_id=1937797556]
+custom_minimum_size = Vector2(0, 64)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_q0044")
+script = ExtResource("2_p6jwv")
+
+[node name="hbx" type="HBoxContainer" parent="." unique_id=82048495]
+layout_mode = 2
+
+[node name="lblTitle" type="Label" parent="hbx" unique_id=973099445]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
+text = "Attribute Title"
+vertical_alignment = 1
+
+[node name="hbxValue" type="HBoxContainer" parent="hbx" unique_id=1580526426]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="txtValue" type="SpinBox" parent="hbx/hbxValue" unique_id=306005887]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2

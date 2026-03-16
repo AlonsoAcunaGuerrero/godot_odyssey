@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ck7k1rqgtm65l"]
+
+[ext_resource type="Theme" uid="uid://c6w5plm1gihas" path="res://addons/odyssey_plugin/views/common/themes/fields_theme.tres" id="1_ainoq"]
+[ext_resource type="Script" uid="uid://cbsqs3trvk7c5" path="res://addons/odyssey_plugin/controllers/common/string_field.gd" id="2_v4ewo"]
+
+[node name="StringField" type="PanelContainer" unique_id=29958747]
+custom_minimum_size = Vector2(0, 64)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ainoq")
+script = ExtResource("2_v4ewo")
+
+[node name="hbx" type="HBoxContainer" parent="." unique_id=427911957]
+layout_mode = 2
+
+[node name="lblTitle" type="Label" parent="hbx" unique_id=1649970153]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
+text = "Attribute Title"
+vertical_alignment = 1
+
+[node name="txtValue" type="TextEdit" parent="hbx" unique_id=480483512]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Write here..."

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bxnbtkcvpbdof"]
+
+[ext_resource type="Texture2D" uid="uid://bbv75dbtkfeum" path="res://icon.svg" id="1_5m7da"]
+[ext_resource type="FontFile" uid="uid://don5kxjxqg5e6" path="res://addons/odyssey_plugin/fonts/oswald/static/Oswald-Medium.ttf" id="2_smkcg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxj7d"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwgdp"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.615686, 0.305882, 0.866667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="CharacterBoxOption" type="PanelContainer" unique_id=577038109]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oxj7d")
+
+[node name="mrg" type="MarginContainer" parent="." unique_id=96507093]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="hbx" type="HBoxContainer" parent="mrg" unique_id=593275073]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="imgIcon" type="TextureRect" parent="mrg/hbx" unique_id=604798653]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("1_5m7da")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="vbx" type="VBoxContainer" parent="mrg/hbx" unique_id=1811499701]
+layout_mode = 2
+
+[node name="lblName" type="Label" parent="mrg/hbx/vbx" unique_id=1916413248]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_smkcg")
+theme_override_font_sizes/font_size = 20
+text = "Character Name"
+
+[node name="btn" type="Button" parent="." unique_id=2035927407]
+show_behind_parent = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bwgdp")

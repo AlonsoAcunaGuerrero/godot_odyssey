@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dt2745y6h5ck1"]
+
+[ext_resource type="Theme" uid="uid://cqnueudex6i6e" path="res://addons/odyssey_plugin/views/themes/search_section_theme.tres" id="1_m15yx"]
+[ext_resource type="FontFile" uid="uid://don5kxjxqg5e6" path="res://addons/odyssey_plugin/fonts/oswald/static/Oswald-Medium.ttf" id="2_rsn8d"]
+[ext_resource type="PackedScene" uid="uid://bxnbtkcvpbdof" path="res://addons/odyssey_plugin/views/character/character_box_option.tscn" id="3_5j8r1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7tcv"]
+bg_color = Color(0.114498, 0.305053, 0.465042, 1)
+
+[node name="CharacterMainEditor" type="PanelContainer" unique_id=151991385]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v7tcv")
+
+[node name="vbx" type="VBoxContainer" parent="." unique_id=1793265472]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="pnlSearch" type="PanelContainer" parent="vbx" unique_id=553631284]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_m15yx")
+
+[node name="hbx" type="HBoxContainer" parent="vbx/pnlSearch" unique_id=1317667094]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="txtSearch" type="TextEdit" parent="vbx/pnlSearch/hbx" unique_id=1697180934]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_rsn8d")
+placeholder_text = "Search..."
+
+[node name="btnSearch" type="Button" parent="vbx/pnlSearch/hbx" unique_id=162440124]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rsn8d")
+text = "Search"
+
+[node name="hbxInfo" type="HBoxContainer" parent="vbx" unique_id=1051357914]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="pnlCharactersList" type="PanelContainer" parent="vbx/hbxInfo" unique_id=1556461601]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="sccList" type="ScrollContainer" parent="vbx/hbxInfo/pnlCharactersList" unique_id=750341304]
+layout_mode = 2
+vertical_scroll_mode = 2
+
+[node name="mrg" type="MarginContainer" parent="vbx/hbxInfo/pnlCharactersList/sccList" unique_id=2036654087]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 12
+
+[node name="vbxList" type="VBoxContainer" parent="vbx/hbxInfo/pnlCharactersList/sccList/mrg" unique_id=778595048]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CharacterBoxOption" parent="vbx/hbxInfo/pnlCharactersList/sccList/mrg/vbxList" unique_id=1942032177 instance=ExtResource("3_5j8r1")]
+layout_mode = 2

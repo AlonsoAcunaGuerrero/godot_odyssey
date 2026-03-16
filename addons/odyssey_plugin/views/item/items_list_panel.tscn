@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bxwhvptphr67m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvbn6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="ItemsListPanel" type="PanelContainer" unique_id=1694501118]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_jvbn6")
+
+[node name="scr" type="ScrollContainer" parent="." unique_id=2145261660]
+layout_mode = 2
+
+[node name="vbxList" type="VBoxContainer" parent="scr" unique_id=854224898]
+layout_mode = 2

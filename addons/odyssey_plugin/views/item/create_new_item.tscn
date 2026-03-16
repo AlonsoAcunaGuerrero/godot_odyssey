@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://4ch6e4bi3x3c"]
+
+[ext_resource type="Script" uid="uid://by7aa72nm6ot7" path="res://addons/odyssey_plugin/controllers/item/create_new_item.gd" id="1_wt5ig"]
+[ext_resource type="Theme" uid="uid://ead1u6ghs5pd" path="res://addons/odyssey_plugin/views/themes/gp_elements_theme.tres" id="2_8xbjg"]
+[ext_resource type="Texture2D" uid="uid://br7gvvr42na0e" path="res://addons/odyssey_plugin/views/item/assets/img/add_button.png" id="3_2weyk"]
+[ext_resource type="FontFile" uid="uid://gu80wxe1bugc" path="res://addons/odyssey_plugin/fonts/oswald/Oswald-VariableFont_wght.ttf" id="4_qqjfr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a172u"]
+bg_color = Color(0.14620002, 0.6577567, 0.86, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7bwy"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.2371876, 0.12731707, 0.3217468, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4w8l"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.41568628, 0.2509804, 0.5529412, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="CreateNewItem" type="PanelContainer" unique_id=1917872819]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a172u")
+script = ExtResource("1_wt5ig")
+
+[node name="vbx" type="VBoxContainer" parent="." unique_id=1746063114]
+layout_mode = 2
+theme = ExtResource("2_8xbjg")
+theme_override_constants/separation = 12
+
+[node name="hbxTypeSelection" type="HBoxContainer" parent="vbx" unique_id=565694175]
+layout_mode = 2
+
+[node name="lblItemType" type="Label" parent="vbx/hbxTypeSelection" unique_id=693117431]
+layout_mode = 2
+text = "Select Item Type: "
+
+[node name="optItemType" type="OptionButton" parent="vbx/hbxTypeSelection" unique_id=573656173]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 4
+popup/item_0/text = "Select..."
+popup/item_0/id = 0
+popup/item_1/text = "Armor"
+popup/item_1/id = 1
+popup/item_2/text = "Shield"
+popup/item_2/id = 2
+popup/item_3/text = "Weapon"
+popup/item_3/id = 3
+
+[node name="btnReload" type="TextureButton" parent="vbx/hbxTypeSelection" unique_id=400817074]
+custom_minimum_size = Vector2(44, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_2weyk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="vbxAttributes" type="VBoxContainer" parent="vbx" unique_id=544371033]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="lblTitle" type="Label" parent="vbx/vbxAttributes" unique_id=294081920]
+layout_mode = 2
+text = "Attributes"
+
+[node name="scr" type="ScrollContainer" parent="vbx/vbxAttributes" unique_id=1438791371]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="vbxFields" type="VBoxContainer" parent="vbx/vbxAttributes/scr" unique_id=192570337]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="pnlItemBasicAttributes" type="PanelContainer" parent="vbx/vbxAttributes/scr/vbxFields" unique_id=713113268]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h7bwy")
+
+[node name="vbx" type="VBoxContainer" parent="vbx/vbxAttributes/scr/vbxFields/pnlItemBasicAttributes" unique_id=1480175281]
+layout_mode = 2
+
+[node name="lblTitle" type="Label" parent="vbx/vbxAttributes/scr/vbxFields/pnlItemBasicAttributes/vbx" unique_id=1013276349]
+layout_mode = 2
+text = "Item Basic Attributes"
+
+[node name="vbxAttributes" type="VBoxContainer" parent="vbx/vbxAttributes/scr/vbxFields/pnlItemBasicAttributes/vbx" unique_id=708297916]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="pnlItemTypesAttributes" type="PanelContainer" parent="vbx/vbxAttributes/scr/vbxFields" unique_id=2026178848]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h7bwy")
+
+[node name="vbx" type="VBoxContainer" parent="vbx/vbxAttributes/scr/vbxFields/pnlItemTypesAttributes" unique_id=543976121]
+layout_mode = 2
+
+[node name="lblTitle" type="Label" parent="vbx/vbxAttributes/scr/vbxFields/pnlItemTypesAttributes/vbx" unique_id=676638475]
+layout_mode = 2
+text = "Item Type Attributes"
+
+[node name="vbxAttributes" type="VBoxContainer" parent="vbx/vbxAttributes/scr/vbxFields/pnlItemTypesAttributes/vbx" unique_id=154022202]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="btnSave" type="Button" parent="vbx/vbxAttributes" unique_id=1066229620]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qqjfr")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_x4w8l")
+text = "Save"
+
+[connection signal="item_selected" from="vbx/hbxTypeSelection/optItemType" to="." method="_on_opt_item_type_item_selected"]
+[connection signal="pressed" from="vbx/hbxTypeSelection/btnReload" to="." method="_on_btn_reload_pressed"]
+[connection signal="pressed" from="vbx/vbxAttributes/btnSave" to="." method="_on_btn_save_pressed"]

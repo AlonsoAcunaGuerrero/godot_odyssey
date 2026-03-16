@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b2dyp57x5o1yw"]
+
+[ext_resource type="Texture2D" uid="uid://b63pjsllenreh" path="res://addons/odyssey_plugin/views/common/assets/img/reload_icon.png" id="1_8cnur"]
+[ext_resource type="Script" uid="uid://cgjxc32io2kq5" path="res://addons/odyssey_plugin/controllers/common/loading_panel.gd" id="1_gdp38"]
+
+[node name="LoadingPanel" type="PanelContainer" unique_id=2009144751]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gdp38")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2011498011]
+layout_mode = 2
+
+[node name="vbx" type="VBoxContainer" parent="CenterContainer" unique_id=1654892759]
+layout_mode = 2
+
+[node name="imgCircle" type="TextureRect" parent="CenterContainer/vbx" unique_id=516287127]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_8cnur")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="lblLoading" type="Label" parent="CenterContainer/vbx" unique_id=1251007826]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 36
+text = "Loading..."
+horizontal_alignment = 1

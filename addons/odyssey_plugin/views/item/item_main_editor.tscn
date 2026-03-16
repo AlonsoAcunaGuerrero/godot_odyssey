@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://cwqovr2egbukp"]
+
+[ext_resource type="FontFile" uid="uid://gu80wxe1bugc" path="res://addons/odyssey_plugin/fonts/oswald/Oswald-VariableFont_wght.ttf" id="1_qfjy0"]
+[ext_resource type="Script" uid="uid://d1uithk3qubr2" path="res://addons/odyssey_plugin/controllers/item/item_main_editor.gd" id="2_qfjy0"]
+[ext_resource type="Theme" uid="uid://cqnueudex6i6e" path="res://addons/odyssey_plugin/views/themes/search_section_theme.tres" id="3_wukfm"]
+[ext_resource type="ButtonGroup" uid="uid://cnh7ly4pavpnl" path="res://addons/odyssey_plugin/views/item/item_editor_actions_button_group.tres" id="4_qfjy0"]
+[ext_resource type="PackedScene" uid="uid://4ch6e4bi3x3c" path="res://addons/odyssey_plugin/views/item/create_new_item.tscn" id="5_nqemu"]
+[ext_resource type="PackedScene" uid="uid://b2dyp57x5o1yw" path="res://addons/odyssey_plugin/views/common/loading_panel.tscn" id="6_cq585"]
+
+[sub_resource type="Theme" id="Theme_ijeit"]
+Button/fonts/font = ExtResource("1_qfjy0")
+CodeEdit/fonts/font = ExtResource("1_qfjy0")
+Label/fonts/font = ExtResource("1_qfjy0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wag0"]
+bg_color = Color(0.1175, 0.31137505, 0.47, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4aj5g"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 16.0
+bg_color = Color(0.14559999, 0.3735201, 0.56, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijeit"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.19215687, 0.101960786, 0.26666668, 1)
+corner_radius_top_left = 52
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78rfj"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.28160426, 0.15979859, 0.38248324, 1)
+corner_radius_top_left = 52
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbr7d"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.41568628, 0.25490198, 0.56078434, 1)
+corner_radius_top_left = 52
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_235yq"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.19215687, 0.101960786, 0.26666668, 1)
+corner_radius_top_right = 52
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exgnh"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.28160426, 0.15979859, 0.38248324, 1)
+corner_radius_top_right = 52
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwh60"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.41677275, 0.2550576, 0.5591602, 1)
+corner_radius_top_right = 52
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txue1"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.28235295, 0.16078432, 0.38431373, 1)
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="ItemMainEditor" type="PanelContainer" unique_id=821620337]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_ijeit")
+theme_override_styles/panel = SubResource("StyleBoxFlat_3wag0")
+script = ExtResource("2_qfjy0")
+
+[node name="vbx" type="VBoxContainer" parent="." unique_id=984054261]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="pnlHeader" type="PanelContainer" parent="vbx" unique_id=919536955]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4aj5g")
+
+[node name="hbx" type="HBoxContainer" parent="vbx/pnlHeader" unique_id=1854618946]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="lblTitle" type="Label" parent="vbx/pnlHeader/hbx" unique_id=897332387]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Item Manager"
+
+[node name="hbxSearchBar" type="HBoxContainer" parent="vbx/pnlHeader/hbx" unique_id=1212119173]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_wukfm")
+theme_override_constants/separation = 0
+
+[node name="txtBar" type="TextEdit" parent="vbx/pnlHeader/hbx/hbxSearchBar" unique_id=254840230]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Item Name..."
+
+[node name="btnSearch" type="Button" parent="vbx/pnlHeader/hbx/hbxSearchBar" unique_id=862818846]
+layout_mode = 2
+text = "Search"
+
+[node name="vbxContent" type="VBoxContainer" parent="vbx" unique_id=1470685932]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="hbx" type="HBoxContainer" parent="vbx/vbxContent" unique_id=456900786]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="btnList" type="Button" parent="vbx/vbxContent/hbx" unique_id=1181392379]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_qfjy0")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ijeit")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_78rfj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbr7d")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_78rfj")
+toggle_mode = true
+button_group = ExtResource("4_qfjy0")
+text = "List"
+
+[node name="btnCreate" type="Button" parent="vbx/vbxContent/hbx" unique_id=1237122423]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_qfjy0")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_235yq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_exgnh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cwh60")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_exgnh")
+toggle_mode = true
+button_group = ExtResource("4_qfjy0")
+text = "Create"
+
+[node name="pnlContent" type="PanelContainer" parent="vbx/vbxContent" unique_id=1257871174]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_txue1")
+
+[node name="CreateNewItem" parent="vbx/vbxContent/pnlContent" unique_id=2048419999 instance=ExtResource("5_nqemu")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LoadingPanel" parent="." unique_id=212040260 instance=ExtResource("6_cq585")]
+visible = false
+layout_mode = 2
+
+[connection signal="toggled" from="vbx/vbxContent/hbx/btnList" to="." method="_on_btn_list_toggled"]
+[connection signal="toggled" from="vbx/vbxContent/hbx/btnCreate" to="." method="_on_btn_create_toggled"]
