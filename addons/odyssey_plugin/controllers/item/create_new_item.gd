@@ -3,8 +3,9 @@ extends PanelContainer
 
 const INT_FIELD_PATH = preload("res://addons/odyssey_plugin/views/common/int_field.tscn")
 const STRING_FIELD_PATH = preload("res://addons/odyssey_plugin/views/common/string_field.tscn")
+const IMAGE_FIELD_PATH = preload("res://addons/odyssey_plugin/views/common/image_field.tscn")
 
-const ITEM_TYPES_PATH: String = "res://addons/odyssey_plugin/entities/inventory/item_types/"
+const ITEM_TYPES_PATH: String = "res://addons/odyssey_plugin/entities/items/item_types/"
 const ITEM_SAVE_PATH: String = "res://addons/odyssey_plugin/data/items/"
 
 @onready var opt_item_type: OptionButton = $vbx/hbxTypeSelection/optItemType
@@ -93,6 +94,8 @@ func _on_opt_item_type_item_selected(index: int) -> void:
 
 func _draw_item_fields(vbx_fields: Control, properties_list: Array[Dictionary]) -> void:
 	for prop in properties_list:
+		print(prop)
+		
 		if prop["type"] == TYPE_INT:
 			var new_int_field: IntField = INT_FIELD_PATH.instantiate()
 			vbx_fields.add_child(new_int_field)
@@ -114,7 +117,12 @@ func _draw_item_fields(vbx_fields: Control, properties_list: Array[Dictionary]) 
 			vbx_fields.add_child(new_string_field)
 			
 			new_string_field.lbl_title.text = str(prop["name"]).capitalize()
-	
+		elif prop["type"] == TYPE_OBJECT:
+			if prop["class_name"] == "Texture2D":
+				var new_image_field: ImageField = IMAGE_FIELD_PATH.instantiate()
+				vbx_fields.add_child(new_image_field)
+				
+				new_image_field.lbl_title.text = str(prop["name"]).capitalize()
 	
 	#if index == 0:
 		#return

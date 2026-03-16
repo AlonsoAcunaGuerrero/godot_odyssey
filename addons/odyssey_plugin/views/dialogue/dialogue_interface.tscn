@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxbrtknbruuq"]
 
-[ext_resource type="Script" uid="uid://dlikbpqjcja43" path="res://addons/odyssey_plugin/entities/dialogue/dialogue_interface.gd" id="1_mabbb"]
+[ext_resource type="Script" uid="uid://dlikbpqjcja43" path="res://addons/odyssey_plugin/entities/dialogues/dialogue_interface.gd" id="1_mabbb"]
 
 [node name="DialogueInterface" type="CanvasLayer" unique_id=605089415]
 layer = 2

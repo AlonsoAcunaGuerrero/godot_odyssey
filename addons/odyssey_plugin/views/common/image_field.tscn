@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://c06p1lwxcmxqc"]
+
+[ext_resource type="Theme" uid="uid://c6w5plm1gihas" path="res://addons/odyssey_plugin/views/common/themes/fields_theme.tres" id="1_g4lwo"]
+[ext_resource type="Script" uid="uid://bv76bj7fi7myx" path="res://addons/odyssey_plugin/controllers/common/image_field.gd" id="2_3bsy2"]
+[ext_resource type="Texture2D" uid="uid://br7gvvr42na0e" path="res://addons/odyssey_plugin/views/item/assets/img/add_button.png" id="3_38txv"]
+[ext_resource type="Texture2D" uid="uid://cm7vbng4q1pvl" path="res://addons/odyssey_plugin/views/item/assets/img/characters_icons.png" id="4_e7t7e"]
+
+[node name="ImageField" type="PanelContainer" unique_id=832138440]
+custom_minimum_size = Vector2(0, 64)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme = ExtResource("1_g4lwo")
+script = ExtResource("2_3bsy2")
+
+[node name="vbx" type="VBoxContainer" parent="." unique_id=1350692990]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="lblTitle" type="Label" parent="vbx" unique_id=657495909]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.25
+theme_override_font_sizes/font_size = 20
+text = "Attribute Title"
+vertical_alignment = 1
+
+[node name="hbx" type="HBoxContainer" parent="vbx" unique_id=1378351622]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btnOpenImage" type="Button" parent="vbx/hbx" unique_id=1720430608]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("3_38txv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="imgRef" type="TextureRect" parent="vbx/hbx" unique_id=944683839]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_e7t7e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=333723763]
+title = "Open a File"
+file_mode = 0
+
+[connection signal="pressed" from="vbx/hbx/btnOpenImage" to="." method="_on_btn_open_image_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

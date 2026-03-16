@@ -2,6 +2,17 @@
 
 [ext_resource type="FontFile" uid="uid://gu80wxe1bugc" path="res://addons/odyssey_plugin/fonts/oswald/Oswald-VariableFont_wght.ttf" id="1_a1q6h"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvn6d"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.26230645, 0.15009743, 0.36068785, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvoah"]
 content_margin_left = 8.0
 content_margin_top = 8.0
@@ -39,6 +50,8 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [resource]
+Button/styles/normal = SubResource("StyleBoxFlat_qvn6d")
+Label/fonts/font = ExtResource("1_a1q6h")
 LineEdit/font_sizes/font_size = 20
 LineEdit/fonts/font = ExtResource("1_a1q6h")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_wvoah")
