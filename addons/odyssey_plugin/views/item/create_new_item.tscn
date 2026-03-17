@@ -2,11 +2,32 @@
 
 [ext_resource type="Script" uid="uid://by7aa72nm6ot7" path="res://addons/odyssey_plugin/controllers/item/create_new_item.gd" id="1_wt5ig"]
 [ext_resource type="Theme" uid="uid://ead1u6ghs5pd" path="res://addons/odyssey_plugin/views/themes/gp_elements_theme.tres" id="2_8xbjg"]
-[ext_resource type="Texture2D" uid="uid://br7gvvr42na0e" path="res://addons/odyssey_plugin/views/item/assets/img/add_button.png" id="3_2weyk"]
+[ext_resource type="Texture2D" uid="uid://b63pjsllenreh" path="res://addons/odyssey_plugin/views/common/assets/img/reload_icon.png" id="3_wt5ig"]
 [ext_resource type="FontFile" uid="uid://gu80wxe1bugc" path="res://addons/odyssey_plugin/fonts/oswald/Oswald-VariableFont_wght.ttf" id="4_qqjfr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a172u"]
 bg_color = Color(0.14620002, 0.6577567, 0.86, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wt5ig"]
+bg_color = Color(0.23529412, 0.1254902, 0.32156864, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2weyk"]
+bg_color = Color(0.3880457, 0.22625011, 0.5161552, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xbjg"]
+bg_color = Color(0.17275426, 0.08503149, 0.24052873, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7bwy"]
 content_margin_left = 12.0
@@ -46,6 +67,7 @@ theme_override_constants/separation = 12
 
 [node name="hbxTypeSelection" type="HBoxContainer" parent="vbx" unique_id=565694175]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="lblItemType" type="Label" parent="vbx/hbxTypeSelection" unique_id=693117431]
 layout_mode = 2
@@ -55,18 +77,25 @@ text = "Select Item Type: "
 layout_mode = 2
 size_flags_horizontal = 3
 selected = 0
-item_count = 2
+item_count = 4
 popup/item_0/text = "Select..."
 popup/item_0/id = 0
-popup/item_1/text = "Helmet"
+popup/item_1/text = "Armor"
 popup/item_1/id = 1
+popup/item_2/text = "Shield"
+popup/item_2/id = 2
+popup/item_3/text = "Weapon"
+popup/item_3/id = 3
 
-[node name="btnReload" type="TextureButton" parent="vbx/hbxTypeSelection" unique_id=400817074]
+[node name="btnReload" type="Button" parent="vbx/hbxTypeSelection" unique_id=171409869]
 custom_minimum_size = Vector2(44, 0)
 layout_mode = 2
-texture_normal = ExtResource("3_2weyk")
-ignore_texture_size = true
-stretch_mode = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_wt5ig")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2weyk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8xbjg")
+icon = ExtResource("3_wt5ig")
+icon_alignment = 1
+expand_icon = true
 
 [node name="vbxAttributes" type="VBoxContainer" parent="vbx" unique_id=544371033]
 layout_mode = 2

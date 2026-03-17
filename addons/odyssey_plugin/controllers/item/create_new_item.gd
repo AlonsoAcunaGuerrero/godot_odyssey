@@ -13,12 +13,11 @@ const ITEM_SAVE_PATH: String = "res://addons/odyssey_plugin/data/items/"
 @onready var lbl_item_type_name: Label = $vbx/vbxAttributes/scr/vbxFields/pnlItemTypesAttributes/vbx/lblTitle
 @onready var vbx_item_type_attributes: VBoxContainer = $vbx/vbxAttributes/scr/vbxFields/pnlItemTypesAttributes/vbx/vbxAttributes
 
-var types_data: Dictionary
+
+var types_path_list: PackedStringArray
 
 func _ready() -> void:
-	var config_data: Dictionary = ItemMainEditor.get_config()
-	
-	types_data = config_data['types']
+	types_path_list = []
 	
 	_update_item_types_list()
 
@@ -32,28 +31,47 @@ func _clear_fields() -> void:
 
 
 func _update_item_types_list() -> void:
+	lbl_item_type_name.text = "Item Type Attributes"
+	
+	types_path_list = []
+	types_path_list = get_item_types()
+	
 	opt_item_type.clear()
 	
 	opt_item_type.add_item("Select...")
 	
-	for type in get_item_types():
-		opt_item_type.add_item(str(type).capitalize())
+	for type in types_path_list:
+		var type_file_name: String = type.split("/")[-1]
+		var type_name: String = type_file_name.split(".")[0]
+		
+		opt_item_type.add_item(str(type_name).capitalize())
 	
 	_clear_fields()
 
 
-func get_item_types() -> Array:
+func get_item_types() -> PackedStringArray:
 	if not(DirAccess.dir_exists_absolute(ITEM_TYPES_PATH)):
 		return []
 	
 	var list_raw_types: PackedStringArray = DirAccess.get_files_at(ITEM_TYPES_PATH)
-	var list_types: Array[String] = []
+	var list_types: PackedStringArray = []
 	
 	for item in list_raw_types:
-		var formated_item: String = item.split(".")[0]
+		if item.split(".")[-1] != "gd":
+			continue
 		
-		if not list_types.has(formated_item):
-			list_types.append(formated_item)
+		var type_path: String = ITEM_TYPES_PATH + "/" + str(item)
+		var type_script = load(type_path)
+		
+		if type_script.new() is ItemResource:
+			list_types.append(type_path)
+		
+		#var type_script: Script = 
+		
+		#var formated_item: String = item.split(".")[0]
+		#
+		#if not list_types.has(formated_item):
+			#list_types.append(formated_item)
 	
 	return list_types
 
@@ -123,46 +141,6 @@ func _draw_item_fields(vbx_fields: Control, properties_list: Array[Dictionary]) 
 				vbx_fields.add_child(new_image_field)
 				
 				new_image_field.lbl_title.text = str(prop["name"]).capitalize()
-	
-	#if index == 0:
-		#return
-	#
-	#_clear_fields()
-	#
-	#var list_types: Array = types_data.keys()
-	#
-	#var type_selected: String = list_types[index-1]
-	#
-	#var type_attributes: Dictionary = types_data[type_selected]
-	#
-	#print(str(type_attributes))
-	#
-	#for attribute in type_attributes.keys():
-		#print(str(attribute))
-		##print(str(type_attributes[attribute]['type']))
-		#
-		#if attribute == "sub_types":
-			#pass
-		#elif type_attributes[attribute]["type"] == "STRING":
-			#var new_string_field: StringField = STRING_FIELD_PATH.instantiate()
-			#vbx_fields.add_child(new_string_field)
-			#
-			#new_string_field.lbl_title.text = str(attribute).capitalize()
-			#
-		#elif type_attributes[attribute]["type"] == "INT":
-			#var new_int_field: IntField = INT_FIELD_PATH.instantiate()
-			#vbx_fields.add_child(new_int_field)
-			#
-			#if type_attributes[attribute]["min_value"]:
-				#new_int_field.txt_value.min_value = float(type_attributes[attribute]["min_value"])
-			#
-			#if type_attributes[attribute]["max_value"]:
-				#new_int_field.txt_value.max_value = float(type_attributes[attribute]["max_value"])
-			#
-			#new_int_field.lbl_title.text = str(attribute).capitalize()
-			
-			
-			
 	
 
 
