@@ -16,6 +16,7 @@ const ITEM_SAVE_PATH: String = "res://addons/odyssey_plugin/data/items/"
 
 var types_path_list: PackedStringArray
 
+
 func _ready() -> void:
 	types_path_list = []
 	
@@ -65,13 +66,6 @@ func get_item_types() -> PackedStringArray:
 		
 		if type_script.new() is ItemResource:
 			list_types.append(type_path)
-		
-		#var type_script: Script = 
-		
-		#var formated_item: String = item.split(".")[0]
-		#
-		#if not list_types.has(formated_item):
-			#list_types.append(formated_item)
 	
 	return list_types
 
