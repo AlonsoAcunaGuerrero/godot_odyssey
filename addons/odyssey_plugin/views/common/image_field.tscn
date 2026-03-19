@@ -28,7 +28,7 @@ text = "Attribute Title"
 vertical_alignment = 1
 
 [node name="hbx" type="HBoxContainer" parent="vbx" unique_id=1378351622]
-custom_minimum_size = Vector2(0, 240)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -49,6 +49,7 @@ stretch_mode = 5
 [node name="FileDialog" type="FileDialog" parent="." unique_id=333723763]
 title = "Open a File"
 file_mode = 0
+filters = PackedStringArray("*.png", "*.jpg", "*.jpeg")
 
 [connection signal="pressed" from="vbx/hbx/btnOpenImage" to="." method="_on_btn_open_image_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

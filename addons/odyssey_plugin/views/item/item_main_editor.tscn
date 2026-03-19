@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://gu80wxe1bugc" path="res://addons/odyssey_plugin/fonts/oswald/Oswald-VariableFont_wght.ttf" id="1_qfjy0"]
 [ext_resource type="Script" uid="uid://d1uithk3qubr2" path="res://addons/odyssey_plugin/controllers/item/item_main_editor.gd" id="2_qfjy0"]
+[ext_resource type="Texture2D" uid="uid://dbv82pcktmky6" path="res://addons/odyssey_plugin/views/item/assets/img/item_manager_icon.png" id="3_pln58"]
 [ext_resource type="Theme" uid="uid://cqnueudex6i6e" path="res://addons/odyssey_plugin/views/themes/search_section_theme.tres" id="3_wukfm"]
 [ext_resource type="ButtonGroup" uid="uid://cnh7ly4pavpnl" path="res://addons/odyssey_plugin/views/item/item_editor_actions_button_group.tres" id="4_qfjy0"]
 [ext_resource type="PackedScene" uid="uid://4ch6e4bi3x3c" path="res://addons/odyssey_plugin/views/item/create_new_item.tscn" id="5_nqemu"]
@@ -97,6 +98,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4aj5g")
 layout_mode = 2
 theme_override_constants/separation = 12
 
+[node name="TextureRect" type="TextureRect" parent="vbx/pnlHeader/hbx" unique_id=904719465]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+texture = ExtResource("3_pln58")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="lblTitle" type="Label" parent="vbx/pnlHeader/hbx" unique_id=897332387]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
@@ -105,6 +113,7 @@ text = "Item Manager"
 [node name="hbxSearchBar" type="HBoxContainer" parent="vbx/pnlHeader/hbx" unique_id=1212119173]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 theme = ExtResource("3_wukfm")
 theme_override_constants/separation = 0
 

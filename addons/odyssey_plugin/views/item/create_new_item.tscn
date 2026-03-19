@@ -51,6 +51,39 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mknwg"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.45370257, 0.27108705, 0.6002502, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqjfr"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.38778102, 0.22567245, 0.51811767, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e35y0"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.29017448, 0.16559339, 0.39305103, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="CreateNewItem" type="PanelContainer" unique_id=1917872819]
 anchors_preset = 15
 anchor_right = 1.0
@@ -153,6 +186,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("4_qqjfr")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_x4w8l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mknwg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qqjfr")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_e35y0")
 text = "Save"
 
 [connection signal="item_selected" from="vbx/hbxTypeSelection/optItemType" to="." method="_on_opt_item_type_item_selected"]

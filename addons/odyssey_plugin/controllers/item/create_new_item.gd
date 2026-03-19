@@ -5,7 +5,7 @@ const INT_FIELD_PATH = preload("res://addons/odyssey_plugin/views/common/int_fie
 const STRING_FIELD_PATH = preload("res://addons/odyssey_plugin/views/common/string_field.tscn")
 const IMAGE_FIELD_PATH = preload("res://addons/odyssey_plugin/views/common/image_field.tscn")
 
-const ITEM_TYPES_PATH: String = "res://addons/odyssey_plugin/entities/items/item_types/"
+const ITEM_TYPES_PATH: String = "res://addons/odyssey_plugin/entities/items/types/"
 const ITEM_SAVE_PATH: String = "res://addons/odyssey_plugin/data/items/"
 
 @onready var opt_item_type: OptionButton = $vbx/hbxTypeSelection/optItemType
@@ -77,6 +77,8 @@ func _on_opt_item_type_item_selected(index: int) -> void:
 		lbl_item_type_name.text = "Item Type Attributes"
 		return
 	
+	print(types_path_list[index-1])
+	
 	var item_type_name: String = opt_item_type.get_item_text(index)
 	item_type_name = item_type_name.to_lower()
 	item_type_name = item_type_name.replace(" ", "_")
@@ -106,8 +108,6 @@ func _on_opt_item_type_item_selected(index: int) -> void:
 
 func _draw_item_fields(vbx_fields: Control, properties_list: Array[Dictionary]) -> void:
 	for prop in properties_list:
-		print(prop)
-		
 		if prop["type"] == TYPE_INT:
 			var new_int_field: IntField = INT_FIELD_PATH.instantiate()
 			vbx_fields.add_child(new_int_field)
@@ -136,6 +136,23 @@ func _draw_item_fields(vbx_fields: Control, properties_list: Array[Dictionary]) 
 				
 				new_image_field.lbl_title.text = str(prop["name"]).capitalize()
 	
+
+
+func generate_v4() -> String:
+	var b = []
+	for i in range(16):
+		b.append(randi() % 256)
+	
+	b[6] = (b[6] & 0x0f) | 0x40
+	b[8] = (b[8] & 0x3f) | 0x80
+	
+	return "%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x" % [
+		b[0], b[1], b[2], b[3],
+		b[4], b[5],
+		b[6], b[7],
+		b[8], b[9],
+		b[10], b[11], b[12], b[13], b[14], b[15]
+	]
 
 
 func _on_btn_reload_pressed() -> void:

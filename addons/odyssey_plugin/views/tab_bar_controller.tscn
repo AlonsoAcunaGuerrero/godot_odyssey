@@ -5,6 +5,7 @@
 [ext_resource type="ButtonGroup" uid="uid://w8gcxgfl6fss" path="res://addons/odyssey_plugin/views/main_menu_button_group.tres" id="2_w24qg"]
 [ext_resource type="Script" uid="uid://b1ysv33wo73vr" path="res://addons/odyssey_plugin/controllers/tab_bar_controller.gd" id="2_wiud1"]
 [ext_resource type="Texture2D" uid="uid://cm7vbng4q1pvl" path="res://addons/odyssey_plugin/views/item/assets/img/characters_icons.png" id="3_r5lv3"]
+[ext_resource type="Texture2D" uid="uid://bvl75xgt5mdy5" path="res://addons/odyssey_plugin/views/item/assets/img/dialogues_icons.png" id="6_x1h7t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awk1w"]
 content_margin_left = 16.0
@@ -94,7 +95,9 @@ size_flags_vertical = 3
 toggle_mode = true
 button_group = ExtResource("2_w24qg")
 text = "Dialogues"
+icon = ExtResource("6_x1h7t")
 alignment = 0
+expand_icon = true
 
 [connection signal="toggled" from="vbx/btnItems" to="." method="_on_btn_items_toggled"]
 [connection signal="toggled" from="vbx/btnCharacters" to="." method="_on_btn_characters_toggled"]

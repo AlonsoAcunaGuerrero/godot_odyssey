@@ -1,4 +1,4 @@
-class_name CharacterSheetRes
+class_name CharacterSheetResource
 extends Resource
 
 @export var character_name: String
